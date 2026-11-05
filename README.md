@@ -15,13 +15,14 @@ Antes de fazer uma modificação, pode ser difícil saber por onde começar, qua
 
 ## Andamento do projeto
 
-O repositório reúne o escopo, os requisitos, os diagramas e o esquema de dados. A tag [v0.1.0](../../tree/v0.1.0) registra a primeira publicação desses materiais. Os recursos descritos acima fazem parte do planejamento do aplicativo.
+O repositório reúne o escopo, os requisitos, os diagramas e o esquema de dados. A tag [v0.1.0](https://github.com/SalixJs/Projeto_garagem/tree/v0.1.0) registra a primeira publicação desses materiais. Os recursos descritos acima fazem parte do planejamento do aplicativo.
 
 A formação do diretório inicial de oficinas ainda precisa ser validada. Guias técnicos sobre peças e melhorias, avaliações e cadastro autônomo de oficinas estão previstos para uma fase posterior.
 
 ## Documentação
 
-- [Documentação do projeto](docs/documentacao-garagem.pdf)
+- [Documentação atual do projeto](docs/projeto.md)
+- [Documento de referência e requisitos (PDF)](docs/documentacao-garagem.pdf)
 - [Diagramas](docs/diagramas/)
 - [Modelo de dados](docs/modelo-de-dados.md)
 - [Esquema MySQL](database/garagem.sql)
