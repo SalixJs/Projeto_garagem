@@ -1,47 +1,29 @@
-# Garagem
+# Estado atual do Garagem
 
-## Visão geral
+Atualizado em 25/11/2026.
 
-O Garagem é um projeto de aplicativo gratuito, pensado para celular e voltado a pessoas que modificam ou pretendem modificar seus carros no Brasil. Seu objetivo é facilitar duas decisões antes de gastar com uma modificação: entender quais etapas de regularização precisam ser investigadas e encontrar uma oficina que ofereça o serviço desejado.
+O Garagem reúne guias de modificações automotivas e informações sobre oficinas. O projeto começou pela documentação e modelagem acadêmica e evoluiu para um site PHP e um console administrativo Java, conectados ao mesmo banco MySQL.
 
-O público inicial são entusiastas automotivos, especialmente iniciantes. Oficinas especializadas participam como estabelecimentos do diretório e podem ganhar recursos próprios em uma fase posterior.
+## Fluxos implementados
 
-## Experiência planejada
+O visitante consulta guias e oficinas. O cadastro distingue entusiastas e donos de oficina. Os donos cadastram os dados do estabelecimento; os entusiastas podem avaliar oficinas. Preferências e informações específicas do usuário ficam associadas à sua conta.
 
-1. A pessoa escolhe o tipo de modificação e consulta um guia com etapas, documentos, fontes e data de revisão.
-2. Ela busca oficinas por região ou localização autorizada e refina os resultados por distância, serviço e especialidade.
-3. No perfil da oficina, consulta endereço, serviços, canais de contato e valores informados, quando disponíveis.
-4. O contato acontece diretamente com a oficina.
+No console Java, o usuário escolhe entre usuários, oficinas, guias e avaliações, com cadastro, listagem, consulta, edição e exclusão. Ao cadastrar um dono, o preenchimento continua para a primeira oficina. A gravação usa uma transação: se a oficina falhar, o cadastro do responsável também é desfeito. Oficinas adicionais podem ser vinculadas a um dono existente.
 
-Os guias têm caráter informativo e indicam as fontes para que o leitor possa confirmar a orientação com os órgãos competentes. A revisão dos guias e do diretório fica a cargo de pessoas autorizadas.
+## Arquitetura
 
-## Escopo do MVP
+Java com Model, View, Controller, DAO e Util. A View trata a interação no console, o Controller coordena as operações e os DAOs fazem a persistência por JDBC e PreparedStatement. Os perfis de usuário usam herança. As senhas são protegidas com hash PBKDF2; não aparecem nas listagens.
 
-| Área | Entrega planejada |
-|---|---|
-| Guias | Catálogo por tipo de modificação, orientações de regularização, etapas, documentos, fontes e data de atualização |
-| Oficinas | Busca e filtros, perfil com endereço e serviços, e acesso aos canais de contato |
-| Preços | Exibição de valores ou faixas fornecidos pela oficina, quando houver dados confiáveis, com a data de atualização |
-| Administração | Acesso autorizado para cadastrar, revisar e atualizar guias e registros de oficinas |
+O site utiliza PHP, HTML, CSS e JavaScript. Os conteúdos dos guias são consultados no MySQL. Java e PHP compartilham o formato de senha e o banco `garagem2`.
 
-O MVP é um guia informativo e um diretório. A contratação e o pagamento acontecem diretamente com a oficina. A experiência é planejada para Android e iOS, com atenção à legibilidade, ao contraste e ao uso da localização mediante permissão.
+## Escopo e limites
 
-## Andamento
+O CRUD Java cobre usuários, oficinas, guias e avaliações; serviços, fotos e preferências são atendidos pelos fluxos web correspondentes. O console é administrativo e depende das permissões da conta MySQL configurada.
 
-O escopo e os requisitos estão documentados. Os modelos de dados e o esquema MySQL de 15 tabelas foram publicados na tag [v0.1.0](https://github.com/SalixJs/Projeto_garagem/tree/v0.1.0) e o esquema foi validado no MySQL local. Esses materiais são a base para implementar o aplicativo.
+ACF Performance e Patrick Suspensões são exemplos demonstrativos. A validação comercial das oficinas, manutenção contínua das fontes, preços, cálculo de distâncias e aplicativos nativos não são declarados concluídos.
 
-| Situação | Trabalho |
-|---|---|
-| Entregue no repositório | Documentação, diagramas e esquema de dados |
-| Planejado para o MVP | Implementar a consulta aos guias, a busca de oficinas e a administração do catálogo |
-| A validar | Formação do diretório inicial, rotina de atualização das fontes e sinalização de conteúdo incorreto |
-| Fase posterior | Guias técnicos, avaliações, cadastro autônomo de oficinas e serviços personalizados |
+## Execução e histórico
 
-O modelo de dados já inclui estruturas para avaliações e perfis de donos de oficina. As funcionalidades correspondentes continuam na fase posterior do produto. Destaque comercial e geração de contatos dependem de validação com as oficinas.
+Código e instruções: [garagem_prototipo](https://github.com/SalixJs/garagem_prototipo).
 
-## Materiais do projeto
-
-- [Documento de referência e requisitos detalhados (PDF)](documentacao-garagem.pdf)
-- [Diagramas conceitual e lógico](diagramas/)
-- [Transcrição dos diagramas e decisões de modelagem](modelo-de-dados.md)
-- [Esquema MySQL](../database/garagem.sql)
+O PDF e os diagramas originais permanecem como referências históricas. Para instalar o sistema atual, use o SQL de `database/garagem.sql`, que cria `garagem2`; o SQL original em português está em `database/historico`.
