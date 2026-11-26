@@ -20,7 +20,7 @@ O site utiliza PHP, HTML, CSS e JavaScript. Os conteúdos dos guias são consult
 
 O CRUD Java cobre usuários, oficinas, guias e avaliações; serviços, fotos e preferências são atendidos pelos fluxos web correspondentes. O console é administrativo e depende das permissões da conta MySQL configurada.
 
-ACF Performance e Patrick Suspensões são exemplos demonstrativos. A validação comercial das oficinas, manutenção contínua das fontes, preços, cálculo de distâncias e aplicativos nativos não são declarados concluídos.
+O catálogo exibe apenas oficinas cadastradas; exemplos demonstrativos antigos não são mais exibidos. A validação comercial das oficinas, manutenção contínua das fontes, preços, cálculo de distâncias e aplicativos nativos não são declarados concluídos.
 
 ## Execução e histórico
 

@@ -1,6 +1,6 @@
 # Modelo implementado
 
-O banco compartilhado pelo Java e PHP chama-se `garagem2`. Ele contém 15 tabelas centrais e quatro extensões do site, totalizando 19.
+O banco compartilhado pelo Java e PHP chama-se `garagem2`. Ele contém 15 tabelas centrais e três extensões do site, totalizando 18.
 
 ## Relacionamentos principais
 
@@ -30,7 +30,6 @@ O cadastro contínuo de dono/oficina preenche três tabelas: `users`, `workshop_
 - `steps`
 - `sources`
 - `step_sources`
-- `workshop_examples`
 - `guide_content`
 - `user_site_state`
 - `web_login_attempts`

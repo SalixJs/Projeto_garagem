@@ -15,7 +15,7 @@ Documentação do projeto de guias de modificações automotivas e busca de ofic
 - Cadastro contínuo de dono e oficina, com vínculo automático e transação no Java.
 - CRUD de usuários, oficinas, guias e avaliações no console Java.
 - Site com login, guias consultados do banco, oficinas, avaliações e preferências do usuário.
-- Catálogo inicial com 11 guias e duas oficinas identificadas como exemplos.
+- Catálogo com 11 guias iniciais, oficinas cadastradas e avaliações dos usuários.
 
 A versão atual é web e console; não é um aplicativo nativo Android/iOS. Os guias informativos não substituem a confirmação das exigências aplicáveis à modificação.
 
